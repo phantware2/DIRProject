@@ -1,4 +1,4 @@
-tableextension 50000 SalesLineExt extends "Sales Line"
+tableextension 50000 PurchaseLineExt extends "Purchase Line"
 {
     fields
     {
