@@ -32,15 +32,7 @@ pageextension 50000 PurchaseOrderSubformExt extends "Purchase Order Subform"
             }
 
         }
-{
-    FieldPropertyName = FieldPropertyValue;
-}
-{
-    ApplicationArea = All;
-}
-
     }
-
     actions
     {
         // Add changes to page actions here
