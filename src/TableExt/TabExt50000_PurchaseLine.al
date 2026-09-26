@@ -10,8 +10,7 @@ tableextension 50000 PurchaseLineExt extends "Purchase Line"
 
             trigger OnValidate()
             begin
-                Rec.Validate(GrossWeight);
-                Rec.Validate(TareWeight);
+                CalculateWeights();
             end;
 
         }
@@ -22,7 +21,7 @@ tableextension 50000 PurchaseLineExt extends "Purchase Line"
 
             trigger OnValidate()
             begin
-                Rec.Validate(Tareweight);
+                CalculateWeights();
             end;
         }
         field(50200; TareWeight; Decimal)
@@ -32,11 +31,7 @@ tableextension 50000 PurchaseLineExt extends "Purchase Line"
             trigger OnValidate()
             var
             begin
-                if (GrossWeight <> 0) and (tareweight <> 0) then begin
-                    NetWeight := GrossWeight - TareWeight;
-                end;
-                if (bags <> 0) and (netweight <> 0) then
-                    AverageWeight := NetWeight / Bags;
+                CalculateWeights();
             end;
         }
         field(50300; NetWeight; Decimal)
@@ -47,8 +42,7 @@ tableextension 50000 PurchaseLineExt extends "Purchase Line"
 
             trigger OnValidate()
             begin
-                if (bags <> 0) and (netweight <> 0) then
-                    AverageWeight := NetWeight / Bags;
+                CalculateWeights();
             end;
         }
         field(50400; AverageWeight; Decimal)
@@ -59,23 +53,18 @@ tableextension 50000 PurchaseLineExt extends "Purchase Line"
 
             trigger OnValidate()
             begin
-                if (bags <> 0) and (netweight <> 0) then
-                    AverageWeight := NetWeight / Bags;
+                CalculateWeights();
             end;
         }
     }
 
-    keys
-    {
-        // Add changes to keys here
-    }
-
-    fieldgroups
-    {
-        // Add changes to field groups here
-    }
-
-    var
-        myInt: Decimal;
+    local procedure CalculateWeights()
+    begin
+        if (GrossWeight <> 0) and (TareWeight <> 0) then begin
+            NetWeight := GrossWeight - TareWeight;
+        end;
+        if (Bags <> 0) and (NetWeight <> 0) then
+            AverageWeight := NetWeight / Bags;
+    end;
 
 }
