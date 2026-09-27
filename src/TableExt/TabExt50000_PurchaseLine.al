@@ -7,6 +7,8 @@ tableextension 50000 PurchaseLineExt extends "Purchase Line"
         {
             DataClassification = ToBeClassified;
             caption = 'No. of Bags';
+            AutoFormatType = 0;
+            DecimalPlaces = 0 : 5;
 
             trigger OnValidate()
             begin
@@ -18,6 +20,8 @@ tableextension 50000 PurchaseLineExt extends "Purchase Line"
         {
             DataClassification = ToBeClassified;
             caption = 'Gross Weight';
+            AutoFormatType = 0;
+            DecimalPlaces = 0 : 5;
 
             trigger OnValidate()
             begin
@@ -28,6 +32,9 @@ tableextension 50000 PurchaseLineExt extends "Purchase Line"
         {
             DataClassification = ToBeClassified;
             caption = 'Tare Weight';
+            AutoFormatType = 0;
+            DecimalPlaces = 0 : 5;
+
             trigger OnValidate()
             var
             begin
@@ -39,6 +46,8 @@ tableextension 50000 PurchaseLineExt extends "Purchase Line"
             DataClassification = ToBeClassified;
             caption = 'Net Weight';
             Editable = false;
+            AutoFormatType = 0;
+            DecimalPlaces = 0 : 5;
 
             trigger OnValidate()
             begin
@@ -50,6 +59,8 @@ tableextension 50000 PurchaseLineExt extends "Purchase Line"
             DataClassification = ToBeClassified;
             caption = 'Average Weight';
             Editable = false;
+            AutoFormatType = 0;
+            DecimalPlaces = 0 : 5;
 
             trigger OnValidate()
             begin
