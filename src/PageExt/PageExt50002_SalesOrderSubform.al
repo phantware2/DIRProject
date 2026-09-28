@@ -2,7 +2,7 @@ pageextension 50002 SalesOrderSubformExt extends "Sales Order Subform"
 {
     layout
     {
-        addafter(quantity)
+        addbefore(quantity)
         {
             field(availablequantity; Rec."Available Quantity")
             {
