@@ -73,6 +73,7 @@ tableextension 50000 PurchaseLineExt extends "Purchase Line"
     begin
         if (GrossWeight <> 0) and (TareWeight <> 0) then begin
             NetWeight := GrossWeight - TareWeight;
+            Validate(Quantity, NetWeight);
         end;
         if (Bags <> 0) and (NetWeight <> 0) then
             AverageWeight := NetWeight / Bags;
