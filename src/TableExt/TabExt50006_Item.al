@@ -1,8 +1,8 @@
-tableextension 50006 "Item Ext 50006" extends Item
+tableextension 50006 ItemExt extends Item
 {
     fields
     {
-        field(50000; "Item Value"; Decimal)
+        field(5000; "Item Value"; Decimal)
         {
             Caption = 'Item Value';
             FieldClass = FlowField;
@@ -12,21 +12,6 @@ tableextension 50006 "Item Ext 50006" extends Item
                       "Valuation Date" = field("Date Filter")));
             Editable = false;
             ToolTip = 'Shows the actual cost value of this item for the selected location and date filters.';
-        }
-    }
-}
-
-pageextension 50006 "Item Card Ext 50006" extends "Item Card"
-{
-    layout
-    {
-        addlast(General)
-        {
-            field("Item Value"; Rec."Item Value")
-            {
-                ApplicationArea = All;
-                ToolTip = 'Shows the actual cost value of this item for the selected location and date filters.';
-            }
         }
     }
 }

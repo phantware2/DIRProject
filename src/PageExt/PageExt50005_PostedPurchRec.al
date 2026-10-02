@@ -1,4 +1,4 @@
-pageextension 50006 PostedPurchRcptHeaderExt extends "Posted Purchase Receipt"
+pageextension 50005 PostedPurchRcptHeaderExt extends "Posted Purchase Receipt"
 {
     layout
     {
