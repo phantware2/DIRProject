@@ -2,7 +2,7 @@ tableextension 50006 "Item Ext 50006" extends Item
 {
     fields
     {
-        field(50006; "Item Value"; Decimal)
+        field(50000; "Item Value"; Decimal)
         {
             Caption = 'Item Value';
             FieldClass = FlowField;
