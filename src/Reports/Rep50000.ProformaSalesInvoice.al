@@ -15,6 +15,7 @@ report 50000 "Pro Forma Inv"
             column(DocumentDate; Format("Document Date", 0, 4))
             {
             }
+            column(Company_Bank_Account_Code; "Company Bank Account Code") { }
             column(CompanyPicture; CompanyInformation.Picture)
             {
             }
